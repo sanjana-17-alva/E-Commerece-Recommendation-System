@@ -41,7 +41,6 @@ poetry.lock
 *.db
 
 # Static files
-static/
 *.css
 *.js
 *.scss
