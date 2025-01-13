@@ -5,23 +5,23 @@ This report discusses the design and implementation of an e-commerce recommendat
 ________________________________________
 2. System Architecture and Design
 The e-commerce recommendation system is designed using the following components:
-•	Backend Framework: Flask
-o	A lightweight and flexible web framework for Python that is used to build the web application, handle routes, and manage user interaction.
-•	Database: MySQL (via SQLAlchemy)
-o	MySQL is used as the relational database for storing user details (e.g., Signup and Signin information), product details, and product recommendations. SQLAlchemy ORM is used to interact with the database.
-•	Machine Learning Models:
-o	Content-Based Filtering: A machine learning technique that recommends products similar to those the user has shown interest in, based on product descriptions and tags.
+-•	Backend Framework: Flask
+--o	A lightweight and flexible web framework for Python that is used to build the web application, handle routes, and manage user interaction.
+-•	Database: MySQL (via SQLAlchemy)
+--o	MySQL is used as the relational database for storing user details (e.g., Signup and Signin information), product details, and product recommendations. SQLAlchemy ORM is used to interact with the database.
+-•	Machine Learning Models:
+--o	Content-Based Filtering: A machine learning technique that recommends products similar to those the user has shown interest in, based on product descriptions and tags.
 ________________________________________
 3. Recommendation Techniques
 The system uses content-based recommendation to suggest products to users. Here's a detailed breakdown of the recommendation process:
-•	TF-IDF Vectorization:
-o	TF-IDF (Term Frequency-Inverse Document Frequency) is used to vectorize product tags or descriptions. It helps in converting textual data into numerical representations, which can then be processed for similarity analysis.
-•	Cosine Similarity:
-o	After the product descriptions or tags are vectorized, cosine similarity is used to measure the similarity between products. Products with a high similarity score are considered similar and are recommended to the user.
-•	Recommendation Process:
-1.	A user selects a product they are interested in.
-2.	The system retrieves similar products using the content-based filtering algorithm.
-3.	A list of the top N similar products is displayed to the user, with their names, review counts, ratings, and images.
+-•	TF-IDF Vectorization:
+--o	TF-IDF (Term Frequency-Inverse Document Frequency) is used to vectorize product tags or descriptions. It helps in converting textual data into numerical representations, which can then be processed for similarity analysis.
+-•	Cosine Similarity:
+--o	After the product descriptions or tags are vectorized, cosine similarity is used to measure the similarity between products. Products with a high similarity score are considered similar and are recommended to the user.
+-•	Recommendation Process:
+--1.	A user selects a product they are interested in.
+--2.	The system retrieves similar products using the content-based filtering algorithm.
+--3.	A list of the top N similar products is displayed to the user, with their names, review counts, ratings, and images.
 ________________________________________
 4. System Features and Routes
 The application includes several features that enhance the user experience:
